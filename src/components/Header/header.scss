@@ -1,0 +1,65 @@
+@import "../../style/variables/variables.scss";
+
+
+
+//Header Css
+.header {
+    height: 100px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+  }
+  
+  //Search Css
+  .search {
+    background-color: #F5F5F5;
+    border-radius: 12px;
+    padding: 10px;
+    width: 100%;
+  
+    span { 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      font-size: 24px;
+      color: #595959;
+    }
+  
+    input {
+      background-color: #F5F5F5;
+      outline: 0;
+      font-size: 16px;
+      font-weight: 400;
+      border: transparent;
+      color: #8C8C8C;
+  
+      &:focus {
+        background: transparent;
+        box-shadow: none;
+        border: transparent;
+      }
+    }
+  }
+  
+  //Search Css
+  //User Img Css
+  .userImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    img {
+      border-radius: 50%;
+      width: 50;
+      height: 50px;
+      object-fit: contain; 
+      border:2px solid $mainColor;
+    }
+    h2{
+      font-size: 24px;
+      color:#161616;
+    }
+  }
+  
+  //User Img Css 
+  //Header Css
