@@ -24,7 +24,7 @@
       font-weight: bold;
     }
   }
-  .menu li.active{
+  .menu a.active li{
     background: $mainColor;
     color:$secondaryTextColor;
   }

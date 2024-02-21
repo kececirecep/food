@@ -11,6 +11,7 @@ import Home from './pages/Home/Home';
 import { useContext } from 'react';
 
 import { AuthContext } from './context/AuthContext';
+import AddProducts from './pages/AddProducts/AddProducts';
 
 function App() {
   const { currentUser } = useContext(AuthContext)
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/' element={<RequireAuth><Home /></RequireAuth>} />
+          <Route path='/addProducts' element={<RequireAuth><AddProducts /></RequireAuth>} />
         </Routes>
       </BrowserRouter>
 

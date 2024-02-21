@@ -4,9 +4,8 @@ import AuthReducer from './AuthReducer'
 const INITIAL_STATE = {
     currentUser: (() => {
         try {
-            return JSON.parse(localStorage.getItem("user")) || null;
+            return JSON.parse(localStorage.getItem("user")) || true;
         } catch (error) {
-            // Hata ile başa çıkın (örneğin, loglayın) ve bir varsayılan değeri döndürün.
             console.error("localStorage'dan kullanıcıyı çözme hatası:", error);
             return null;
         }
