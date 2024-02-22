@@ -12,6 +12,7 @@ import { useContext } from 'react';
 
 import { AuthContext } from './context/AuthContext';
 import AddProducts from './pages/AddProducts/AddProducts';
+import Products from './pages/Products/Products';
 
 function App() {
   const { currentUser } = useContext(AuthContext)
@@ -28,14 +29,11 @@ function App() {
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/' element={<RequireAuth><Home /></RequireAuth>} />
+          <Route path='/products' element={<RequireAuth><Products /></RequireAuth>} />
           <Route path='/addProducts' element={<RequireAuth><AddProducts /></RequireAuth>} />
         </Routes>
-      </BrowserRouter>
-
-
-    </>
-
-
+      </BrowserRouter> 
+    </> 
   );
 }
 

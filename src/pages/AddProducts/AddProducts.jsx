@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Row, Col } from 'react-bootstrap';
 import Aside from '../../components/Aside/Aside';
 import Header from '../../components/Header/Header';
 
 import './AddProducts.scss'
 
+import { db } from '../../firebase'
+import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
+
 const AddProducts = () => {
+
+    const [productName, setProductName] = useState("");
+
+    const handleAddProduct = async(e) => {
+        e.preventDefault()
+
+        const res = await addDoc(collection(db, "product"), {
+            name: productName,
+            state: "CA",
+            country: "USA"
+        });   
+        console.log(res.id);
+    }
+     
+
     return (
         <div>
             <Row className='d-flex m-0 p-0'>
@@ -14,13 +32,13 @@ const AddProducts = () => {
                 </Col>
                 <Col className='m-0 p-0'>
                     <Header />
-                    <form className='addProducts'>
+                    <form onSubmit={handleAddProduct} className='addProducts'>
                         <div className="mb-3">
                             <label for="formFile" className="form-label">Select Image</label>
                             <input className="form-control" type="file" id="formFile" />
                         </div>
                         <div className="form-floating mb-3">
-                            <input type="text" className="form-control" placeholder="Product Name" />
+                            <input type="text" className="form-control" placeholder="Product Name" onChange={e=>setProductName(e.target.value)} />
                             <label >Product Name</label>
                         </div>
                         <div className="form-floating mb-3">
@@ -34,7 +52,7 @@ const AddProducts = () => {
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select>
-                        <button>Add Product</button>
+                        <button type='submit'>Add Product</button>
                     </form>
                 </Col>
             </Row>
