@@ -20,7 +20,8 @@ const Products = () => {
                     <ul>
                         {products.map((product) => (
                             <li key={product.id}>
-                                {product.name} 
+                                <h2>{product.name} </h2>
+                                <img src={product.imageUrl} alt="" />
                             </li>
                         ))}
                     </ul>

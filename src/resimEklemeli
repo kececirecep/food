@@ -5,35 +5,43 @@ import Header from '../../components/Header/Header';
 
 import './AddProducts.scss'
 import { IoFolderOpenOutline } from "react-icons/io5";
-import { db, storage } from '../../firebase'
+import { db } from '../../firebase'
 import { addDoc, collection, doc, serverTimestamp, setDoc } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+
+ 
+
 
 const AddProducts = () => {
+    const storage = getStorage();
 
     const [file, setFile] = useState("");
-    
 
 
     const [productName, setProductName] = useState("");
 
     const handleAddProduct = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
-        
+        // Upload image to Firebase Storage
         const storageRef = ref(storage, `productImages/${file.name}`);
         await uploadBytes(storageRef, file);
 
-        
+        // Get the download URL of the uploaded image
         const imageUrl = await getDownloadURL(storageRef);
 
-        const res = await addDoc(collection(db, "product"), {
-            name: productName, 
+        // Add product to Firestore with image URL
+        const productDocRef = await addDoc(collection(db, "product"), {
+            name: productName,
             timestamp: serverTimestamp(),
-            imageUrl: imageUrl,
+            imageUrl: imageUrl, // Add this line to include the image URL in the product data
         });
-        console.log(res.id);
+
+        console.log(productDocRef.id);
     }
+
+
 
 
     return (
@@ -49,14 +57,14 @@ const AddProducts = () => {
                         <div className="formInput">
                             <label htmlFor="file">
                                 <img
-                                className='w-25 mb-4'
-                                src={
-                                    file
-                                        ? URL.createObjectURL(file)
-                                        : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
-                                }
-                                alt=""
-                            /> 
+                                    className='w-25 mb-4'
+                                    src={
+                                        file
+                                            ? URL.createObjectURL(file)
+                                            : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                                    }
+                                    alt=""
+                                />
                             </label>
                             <input
                                 type="file"
