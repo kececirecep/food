@@ -1,0 +1,40 @@
+@import '../../style/variables/variables.scss';
+
+.addCategory {
+    margin: 25px;
+    padding: 20px;
+    box-shadow: 0px 0px 7px rgb(240, 240, 240);
+
+    button {
+        background-color: $mainColor;
+        color:white;
+        padding:5px 10px;
+        border:none;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+}
+
+.previous{
+    margin: 25px;
+    padding: 20px;
+    box-shadow: 0px 0px 7px rgb(240, 240, 240);
+    span{
+        font-size: 32px;
+        display: flex;
+        align-items: center;
+        h2{
+            margin:0;
+        }
+    }
+    ul{
+        margin:0;
+        padding: 10px;
+        li{
+            font-size: 22px;
+            font-weight: 600;
+            color:rgb(65, 139, 68);
+        }
+    } 
+}

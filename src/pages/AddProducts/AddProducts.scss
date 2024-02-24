@@ -1,5 +1,17 @@
-.addProducts{
-    margin:25px;
-    padding:20px;
+@import '../../style/variables/variables.scss';
+
+.addProducts {
+    margin: 25px;
+    padding: 20px;
     box-shadow: 0px 0px 7px rgb(240, 240, 240);
+
+    button {
+        background-color: $mainColor;
+        color:white;
+        padding:5px 10px;
+        border:none;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: 600;
+    }
 }

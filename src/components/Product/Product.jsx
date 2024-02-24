@@ -1,13 +1,18 @@
 import React from 'react'
 import './product.scss'
 
-const Product = () => {
+import { HiPlusSmall } from "react-icons/hi2";
+
+const Product = (props) => {
     return (
         <div className="productCard">
-            <img src="https://media.istockphoto.com/id/511095807/tr/foto%C4%9Fraf/homemade-italian-gnocchi-with-red-sauce.jpg?s=1024x1024&w=is&k=20&c=FkG8yl26Czc3qviaQcOJDwZ62xvseQY6IhEl_3oSa0A=" alt="" />
-            <h2>Food’s Name 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, officia?</p>
-            <div className="price"></div>
+            <img src={props.imageUrl} alt="" />
+            <h2>{props.name}</h2>
+            <p>{props.desc}</p>
+            <div className="priceAndCart">
+                <span>${props.price}</span>
+                <button className='iconPlus'><HiPlusSmall /></button>
+            </div>
         </div>
     )
 }

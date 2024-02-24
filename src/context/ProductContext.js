@@ -16,7 +16,7 @@ const ProductProvider = ({ children }) => {
           ...doc.data(),
         }));
         setProducts(productsData);
-      } catch (error) {
+      } catch (error) { 
         console.error('Error fetching products:', error);
       }
     };

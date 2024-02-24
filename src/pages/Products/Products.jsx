@@ -5,10 +5,10 @@ import Header from '../../components/Header/Header';
 
 import { ProductContext } from '../../context/ProductContext';
 
+import ProductCard from '../../components/Product/Product'
+
 const Products = () => {
     const products = useContext(ProductContext);
-
-
     return (
         <div>
             <Row className='d-flex m-0 p-0'>
@@ -17,14 +17,11 @@ const Products = () => {
                 </Col>
                 <Col className='m-0 p-0'>
                     <Header />
-                    <ul>
-                        {products.map((product) => (
-                            <li key={product.id}>
-                                <h2>{product.name} </h2>
-                                <img src={product.imageUrl} alt="" />
-                            </li>
+                    <div className='d-flex justify-content-start flex-wrap gap-2 p-4'>
+                        {products.map((product, index) => (
+                            <ProductCard key={index} imageUrl={product.imageUrl} name={product.name} desc={product.desc} price={product.price} />
                         ))}
-                    </ul>
+                    </div>
                 </Col>
             </Row>
         </div>

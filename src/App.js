@@ -13,6 +13,7 @@ import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
 import AddProducts from './pages/AddProducts/AddProducts';
 import Products from './pages/Products/Products';
+import AddCategory from './pages/AddCategory/AddCategory';
 
 function App() {
   const { currentUser } = useContext(AuthContext)
@@ -31,6 +32,7 @@ function App() {
           <Route path='/' element={<RequireAuth><Home /></RequireAuth>} />
           <Route path='/products' element={<RequireAuth><Products /></RequireAuth>} />
           <Route path='/addProducts' element={<RequireAuth><AddProducts /></RequireAuth>} />
+          <Route path='/addCategory' element={<RequireAuth><AddCategory /></RequireAuth>} />
         </Routes>
       </BrowserRouter> 
     </> 

@@ -12,6 +12,7 @@ const Menu = () => {
       <NavLink to="/orders"><li><span><PiBasketLight /></span> Orders</li></NavLink>
       <NavLink to="/products"><li><span><BsBoxes /></span> Products</li></NavLink>
       <NavLink to="/addProducts"><li><span><CiCirclePlus  /></span> Add Products</li></NavLink>
+      <NavLink to="/addCategory"><li><span><CiCirclePlus  /></span> Add Category</li></NavLink>
       <NavLink to="/wallet"><li><span><CiCreditCard1 /></span> My wallets</li></NavLink>
       <NavLink to="/settings"><li><span><CiSettings /></span> Settings</li></NavLink>
       <NavLink to="/login"><li><span><CiLogout /></span> Log out</li></NavLink>
