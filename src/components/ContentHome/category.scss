@@ -1,35 +1,63 @@
 @import '../../style/variables/variables.scss';
 
 
-.categoryCardHomeContainer{
-    display: flex; 
-    justify-content: start;
-    align-items: center;
-    h2{
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-    .categoryCardHome{
-      background: #fff;
-      border-radius: 16px; 
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      img{ 
-        width: 35px;
-        height: 35px;
-        object-fit: contain;
-        margin-bottom: 15px;
-      }
-    }
-    .categoryCardHomeArrow{
-      font-size: 36px;
-      color: $mainColor;
-      display: flex; 
-      justify-content: center; 
-    }
-  }
+// .slider-container {
+//   width: 100%; /* You can adjust this value based on your layout */
+//   max-width: 1300px; /* Set a maximum width if needed */
+//   margin: 0 auto; /* Center the container */
+// }
+// .categoryCardHome {
+//   background: #fff;
+//   border-radius: 16px;  
+//   display: flex!important;
+//   flex-direction: column!important;
+//   justify-content: center!important;
+//   align-items: center!important;
+//   padding: 10px;
   
+  
+//   img { 
+//     width: 40px;
+//     height: 40px;
+//     object-fit: contain;
+//     margin-bottom: 15px;
+//   }
+//   h4{
+//     text-transform: capitalize;
+//   }
+// }
+
+// .categoryCardHomeArrow {
+//   font-size: 36px;
+//   color: $mainColor;
+//   display: flex;
+//   justify-content: center;
+// }
+
+
+// .slick-list {
+//   margin: 0 -15px; // Adjust this value as needed
+// }
+// .slick-slide {
+//   width: 200px; // Adjust this value as needed
+//   margin: 0 15px; // Adjust this value to create space between slides
+// }
+
+
+// .slick-track {
+//   display: flex;
+//   flex-direction: row!important;
+//   width:100%!important;
+//   overflow: hidden;
+// }
+ 
+.slider-container {
+   width: 100%; /* You can adjust this value based on your layout */
+   max-width: 500px; /* Set a maximum width if needed */
+   margin: 0 auto; /* Center the container */
+ }
+
+.categoryCardHome img{
+  width: 35px;
+  height: 35px;
+}

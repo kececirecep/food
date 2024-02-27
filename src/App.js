@@ -14,6 +14,7 @@ import { AuthContext } from './context/AuthContext';
 import AddProducts from './pages/AddProducts/AddProducts';
 import Products from './pages/Products/Products';
 import AddCategory from './pages/AddCategory/AddCategory';
+import Settings from './pages/Settings/Settings';
 
 function App() {
   const { currentUser } = useContext(AuthContext)
@@ -33,6 +34,7 @@ function App() {
           <Route path='/products' element={<RequireAuth><Products /></RequireAuth>} />
           <Route path='/addProducts' element={<RequireAuth><AddProducts /></RequireAuth>} />
           <Route path='/addCategory' element={<RequireAuth><AddCategory /></RequireAuth>} />
+          <Route path='/settings' element={<RequireAuth><Settings /></RequireAuth>} />
         </Routes>
       </BrowserRouter> 
     </> 

@@ -4,6 +4,7 @@ import './header.scss'
 import { Row, Col } from 'react-bootstrap'
 import Search from './Search'
 import UserImg from './UserImg'
+import HeaderCartButton from './HeaderCartButton'
 
 
 const Header = () => {
@@ -13,9 +14,9 @@ const Header = () => {
                 <Col sm={10} className='px-4' >
                     <Search />
                 </Col>
-                <Col sm={2}>
-                    <UserImg />
-                </Col>
+                <Col sm={1}>
+                    <HeaderCartButton />
+                </Col> 
             </Row>
         </div>
     )
