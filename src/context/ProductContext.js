@@ -12,7 +12,7 @@ const ProductProvider = ({ children }) => {
       try {
         const productsSnapshot = await getDocs(collection(db, 'product'));
         const productsData = productsSnapshot.docs.map((doc) => ({
-          id: doc.id,
+          id: doc.id, 
           ...doc.data(),
         }));
         setProducts(productsData);
@@ -22,7 +22,7 @@ const ProductProvider = ({ children }) => {
     };
 
     fetchProducts();
-  }, []);
+  }, []); 
 
   return (
     <ProductContext.Provider value={products}>

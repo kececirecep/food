@@ -5,19 +5,22 @@ import './HeaderCartButton.scss';
 import { OrderContext } from '../../context/OrderContext';
 
 const HeaderCartButton = () => {
+  const { orderItems } = useContext(OrderContext)
+
+
   const [showCart, setShowCart] = useState(false);
 
   const handleCartClose = () => setShowCart(false);
 
-  const { orderItems, addToCart } = useContext(OrderContext);
-
-  if (!orderItems) {
-    console.error("OrderContext is not provided properly.");
-    return null;
-  }
 
   const myButtonStyle = {
     fontSize: "36px"
+  };
+
+  const calculateTotalPrice = () => {
+    return orderItems.reduce((total, item) => {
+      return total + item.price * item.amount;
+    }, 0);
   };
 
   return (
@@ -38,15 +41,18 @@ const HeaderCartButton = () => {
           <Offcanvas.Title>Shopping Cart</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <h2>Sipariş Sepeti</h2>
           <ul>
             {orderItems.map((item, index) => (
               <li key={index}>
-                <h2>{item.name}</h2>
-                <img src={item.imageUrl} width="150px" alt="" />
+                <img src={item.imageUrl} alt="" />
+                <p>Name: {item.name}</p>
+                <p>Description: {item.desc}</p>
+                <p>Price: ${item.price}</p>
+                <p>Amount : {item.amount}</p>  
               </li>
             ))}
           </ul>
+          <p>Total Price: ${calculateTotalPrice()}</p>
         </Offcanvas.Body>
       </Offcanvas>
     </div>

@@ -19,7 +19,7 @@ const Products = () => {
                     <Header />
                     <div className='d-flex justify-content-start flex-wrap gap-2 p-4'>
                         {products.map((product, index) => (
-                            <ProductCard key={index} imageUrl={product.imageUrl} name={product.name} desc={product.desc} price={product.price} />
+                            <ProductCard key={index} id={product.id} amount={product.amount} imageUrl={product.imageUrl} name={product.name} desc={product.desc} price={product.price} />
                         ))}
                     </div>
                 </Col>

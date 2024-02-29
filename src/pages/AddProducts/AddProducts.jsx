@@ -7,7 +7,9 @@ import './AddProducts.scss'
 import { db, storage } from '../../firebase'
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { CategoryContext } from '../../context/CategoryContext';
+import { CategoryContext } from '../../context/CategoryContext';  
+
+import { v4 as uuidv4 } from 'uuid';
 
 const AddProducts = () => {
     const category = useContext(CategoryContext)
@@ -16,7 +18,10 @@ const AddProducts = () => {
     const [productName, setProductName] = useState("");
     const [productDesc, setProductDesc] = useState("");
     const [productPrice, setProductPrice] = useState(0);
-    const [selectedCategory, setSelectedCategory] = useState("");
+    const [selectedCategory, setSelectedCategory] = useState(""); 
+    const [amount, setAmount] = useState(1);
+ 
+     
 
     const handleAddProduct = async (e) => {
         e.preventDefault()
@@ -24,19 +29,21 @@ const AddProducts = () => {
 
         const storageRef = ref(storage, `productImages/${file.name}`);
         await uploadBytes(storageRef, file);
-
+ 
 
         const imageUrl = await getDownloadURL(storageRef);
 
-        const res = await addDoc(collection(db, "product"), {
+        const res = await addDoc(collection(db, "product"), { 
+            id:uuidv4(),
+            amount:amount,
             imageUrl: imageUrl,
             name: productName,
             desc: productDesc,
             price: productPrice,
-            category: selectedCategory,
+            category: selectedCategory, 
             timestamp: serverTimestamp(),
         });
-        console.log(res.category);
+        console.log(res);
     }
 
 
