@@ -22,7 +22,7 @@ const ProductProvider = ({ children }) => {
     };
 
     fetchProducts();
-  }, []); 
+  }, [products]); 
 
   return (
     <ProductContext.Provider value={products}>
