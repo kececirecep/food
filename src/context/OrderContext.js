@@ -9,19 +9,28 @@ export const OrderProvider = ({ children }) => {
     const existingItemIndex = orderItems.findIndex((item) => item.id === product.id);
 
     if (existingItemIndex !== -1) {
-      // Product already exists in the cart, update the quantity
+
       const updatedOrderItems = [...orderItems];
       updatedOrderItems[existingItemIndex].amount += product.amount;
       setOrderItems(updatedOrderItems);
     } else {
-      // Product doesn't exist in the cart, add a new entry
+
       setOrderItems([...orderItems, product]);
     }
   };
-   
+
+  const removeToCart = (productId) => {
+    const updatedOrderItems = orderItems.filter((item) => item.id !== productId);
+    setOrderItems(updatedOrderItems)
+  }
+
+  const allClear=(product)=>{
+    setOrderItems([]);
+  }
+
 
   return (
-    <OrderContext.Provider value={{ orderItems, addToCart }}>
+    <OrderContext.Provider value={{ orderItems, addToCart, removeToCart,allClear }}>
       {children}
     </OrderContext.Provider>
   );

@@ -15,6 +15,7 @@ import AddProducts from './pages/AddProducts/AddProducts';
 import Products from './pages/Products/Products';
 import AddCategory from './pages/AddCategory/AddCategory';
 import Settings from './pages/Settings/Settings';
+import Orders from './pages/Order/Orders';
 
 function App() {
   const { currentUser } = useContext(AuthContext)
@@ -31,6 +32,7 @@ function App() {
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/' element={<RequireAuth><Home /></RequireAuth>} />
+          <Route path='/orders' element={<RequireAuth><Orders /></RequireAuth>} />
           <Route path='/products' element={<RequireAuth><Products /></RequireAuth>} />
           <Route path='/addProducts' element={<RequireAuth><AddProducts /></RequireAuth>} />
           <Route path='/addCategory' element={<RequireAuth><AddCategory /></RequireAuth>} />

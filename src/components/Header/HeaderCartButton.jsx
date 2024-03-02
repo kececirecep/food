@@ -1,11 +1,14 @@
 import React, { useContext, useState } from 'react';
-import { MdShoppingCart } from 'react-icons/md';
+import { MdShoppingCart, MdOutlineClose } from 'react-icons/md';
 import { Offcanvas } from 'react-bootstrap';
 import './HeaderCartButton.scss';
 import { OrderContext } from '../../context/OrderContext';
+import { NavLink } from 'react-router-dom';
+
+
 
 const HeaderCartButton = () => {
-  const { orderItems } = useContext(OrderContext)
+  const { orderItems, removeToCart, allClear } = useContext(OrderContext)
 
 
   const [showCart, setShowCart] = useState(false);
@@ -37,22 +40,31 @@ const HeaderCartButton = () => {
       </button>
 
       <Offcanvas show={showCart} onHide={handleCartClose} placement="end">
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Shopping Cart</Offcanvas.Title>
+        <Offcanvas.Header closeButton className='shopBox'>
+          <Offcanvas.Title >Shopping Cart</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <ul>
-            {orderItems.map((item, index) => (
-              <li key={index}>
+          {orderItems.map((item, index) => {
+            return (
+              <div key={index} className='shoppingCart d-flex justify-content-between'>
                 <img src={item.imageUrl} alt="" />
-                <p>Name: {item.name}</p>
-                <p>Description: {item.desc}</p>
-                <p>Price: ${item.price}</p>
-                <p>Amount : {item.amount}</p>  
-              </li>
-            ))}
-          </ul>
-          <p>Total Price: ${calculateTotalPrice()}</p>
+                <div className="d-flex justify-content-end flex-column product">
+                  <p className='productName'>{item.name}</p>
+                  <span className='d-flex justify-content-end gap-2'>
+                    <p>${item.price}</p>
+                    <p>x{item.amount}</p>
+                  </span>
+                </div>
+                <span className='removeIcon' onClick={() => removeToCart(item.id)}><MdOutlineClose /></span>
+              </div>
+            )
+          })
+          }
+          <p className='totalAmount'>Total Price:<span>${calculateTotalPrice()}</span> </p>
+          <div className="buttons">
+            <button className='allClearOrder' onClick={() => allClear(orderItems)}>All Clear</button>
+            <NavLink to="/orders" className='viewOrder'>View Order</NavLink>
+          </div>
         </Offcanvas.Body>
       </Offcanvas>
     </div>

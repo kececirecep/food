@@ -1,0 +1,56 @@
+@import '../../style/variables/variables.scss';
+
+
+.containerOrderCard {
+    border-bottom: 1px solid rgb(233, 233, 233);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    img {
+        width: 200px;
+        border-radius: 4px;
+    }
+}
+
+
+.emptyCart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 20px;
+    margin: 50px;
+    border-radius: 8px;
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background: $mainColor;
+        color: $secondaryTextColor;
+        font-size: 24px;
+    }
+
+    h2 {
+        font-weight: 400;
+    }
+
+    .startShopping {
+        border: none;
+        padding: 8px 16px;
+        border-radius: 2px;
+        font-weight: 600;
+        background: $mainColor;
+        color: white;
+
+        &:hover {
+            background: $hoverMainColor;
+        }
+    }
+
+}

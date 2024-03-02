@@ -19,6 +19,7 @@ const CategoryHome = () => {
     height: "250px",
     fontSize: "124px",
   };
+
   const settings = {
     dots: false,
     arrows: true,
@@ -26,8 +27,8 @@ const CategoryHome = () => {
     nextArrow: <img src="/images/arrow-right.png" alt="Next" style={arrowStyle} />,
     infinite: false,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 3,
+    slidesToShow: 4,
+    slidesToScroll: 2,
     initialSlide: 0,
     responsive: [
       {
@@ -60,7 +61,7 @@ const CategoryHome = () => {
   return (
     <div className='slider-container'>
       <h2>Categories</h2>
-      <Slider {...settings} className=''>
+      <Slider {...settings} className='m-4'>
         {category.map((category, index) => {
           return (
             <div key={index} className="categoryCardHome">
