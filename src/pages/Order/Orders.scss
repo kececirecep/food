@@ -7,10 +7,27 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    margin:10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
     img {
         width: 200px;
         border-radius: 4px;
+    }
+
+    span {
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    .removeIcon { 
+        display: flex;
+        align-items: center;
+        color:rgb(226, 25, 25);
+        cursor: pointer;
+        &:hover{
+            color:rgb(155, 23, 23);
+        }
     }
 }
 
@@ -53,4 +70,23 @@
         }
     }
 
+}
+
+
+.summary{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    height: 150px;
+    margin:10px;
+    padding: 10px;
+    position: fixed;
+    width: 25%;
+    border:1px solid rgb(245, 245, 245);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span{
+        color: rgb(15, 172, 80);
+    }
 }
