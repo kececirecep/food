@@ -48,14 +48,18 @@ const HeaderCartButton = () => {
             return (
               <div key={index} className='shoppingCart d-flex justify-content-between'>
                 <img src={item.imageUrl} alt="" />
-                <div className="d-flex justify-content-end flex-column product">
-                  <p className='productName'>{item.name}</p>
-                  <span className='d-flex justify-content-end gap-2'>
-                    <p>${item.price}</p>
-                    <p>x{item.amount}</p>
+                <div className='d-flex'>
+                  <div className="d-flex justify-content-end flex-column product">
+                    <p className='productName text-center'>{item.name}</p>
+                    <span className='d-flex justify-content-end gap-2'>
+                      <p>${item.price}</p>
+                      <p>x{item.amount}</p>
+                    </span>
+                  </div>
+                  <span className='removeIcon' onClick={() => removeToCart(item.id)}>
+                    <MdOutlineClose />
                   </span>
                 </div>
-                <span className='removeIcon' onClick={() => removeToCart(item.id)}><MdOutlineClose /></span>
               </div>
             )
           })
