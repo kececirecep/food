@@ -14,7 +14,7 @@ const Products = () => {
             <Row className='d-flex m-0 p-0'>
                 <Col style={{ maxWidth: '316px' }} className='m-0 p-0'>
                     <Aside />
-                </Col>
+                </Col> 
                 <Col className='m-0 p-0'>
                     <Header />
                     <div className='d-flex justify-content-start flex-wrap gap-2 p-4'>
