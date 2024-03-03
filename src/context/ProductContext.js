@@ -22,12 +22,9 @@ const ProductProvider = ({ children }) => {
     };
 
     fetchProducts();
+ 
 
-    if (products !== "") {
-      fetchProducts();
-    }
-    
-  }, [products]);
+  }, []);
 
   return (
     <ProductContext.Provider value={products}>
