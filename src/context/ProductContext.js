@@ -12,16 +12,21 @@ const ProductProvider = ({ children }) => {
       try {
         const productsSnapshot = await getDocs(collection(db, 'product'));
         const productsData = productsSnapshot.docs.map((doc) => ({
-          id: doc.id, 
+          id: doc.id,
           ...doc.data(),
         }));
         setProducts(productsData);
-      } catch (error) { 
+      } catch (error) {
         console.error('Error fetching products:', error);
       }
     };
 
     fetchProducts();
+
+    if (products !== "") {
+      fetchProducts();
+    }
+    
   }, [products]);
 
   return (

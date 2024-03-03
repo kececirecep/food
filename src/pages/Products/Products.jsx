@@ -12,10 +12,10 @@ const Products = () => {
     return (
         <div>
             <Row className='d-flex m-0 p-0'>
-                <Col style={{ maxWidth: '316px' }} className='m-0 p-0'>
+                <Col xs={2} sm={2} md={1} xl={3} className='m-0 p-0'>
                     <Aside />
                 </Col>
-                <Col className='m-0 p-0'>
+                <Col xs={10} sm={10} md={11} xl={9} className='m-0 p-0'>
                     <Header />
                     <div className='d-flex justify-content-start flex-wrap gap-2 p-4'>
                         {products.map((product, index) => (

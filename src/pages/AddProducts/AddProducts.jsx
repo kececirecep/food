@@ -50,7 +50,7 @@ const AddProducts = () => {
     return (
         <div>
             <Row className='d-flex m-0 p-0'>
-                <Col style={{ maxWidth: '316px' }} className='m-0 p-0'>
+                <Col style={{ maxWidth: '316px' }} className='m-0 p-0 '>
                     <Aside />
                 </Col>
                 <Col className='m-0 p-0'>
