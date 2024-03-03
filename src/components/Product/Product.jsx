@@ -19,7 +19,7 @@ const Product = (props) => {
             imageUrl: props.imageUrl
         };
 
-        addToCart(productInfo);
+        addToCart(productInfo); 
     }
  
     return (

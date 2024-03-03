@@ -11,10 +11,10 @@ const Header = () => {
     return (
         <div className='header d-flex justify-content-center align-items-center'>
             <Row className='w-100 '>
-                <Col sm={10} className='px-4' >
+                <Col xs={9} sm={10} className='px-4' >
                     <Search />
                 </Col>
-                <Col sm={1}>
+                <Col xs={3} sm={2} className=''>
                     <HeaderCartButton />
                 </Col> 
             </Row>

@@ -4,63 +4,75 @@
 //ASIDE CSS
 
 .aside {
-    width: 316px;
-    border-right: 1px solid rgb(238, 238, 238);
-    height: 100vh; 
-    transition: .4s;
-    position: fixed;
+  border-right: 1px solid rgb(238, 238, 238);
+  height: 100vh;
+  transition: .4s;
+}
+
+// @media (max-width: 1000px) {
+//   .aside {
+//     width: 77px;
+//     transition: .4s;
+//   }
+// }
+
+//logo css
+.logo {
+  height: 100px;
+
+  img {
+    width: 40px;
+    background-size: contain;
   }
 
-  @media (max-width: 1000px) {
-    .aside {
-      width: 77px;
-      transition: .4s;
-    }
+  .logoText {
+    color: #161616;
+    font-size: 28px;
+    font-weight: bold;
   }
+}
 
-  //logo css
-  .logo {
-    height: 100px;
-  
-    img {
-      width: 40px;
-      background-size: contain;
-    }
-  
-    .logoText {
-      color: #161616;
-      font-size: 28px;
-      font-weight: bold;
-    }
-  }
-  .menu a.active li{
+.menu a.active li {
+  background: $mainColor;
+  color: $secondaryTextColor;
+}
+
+//menu css
+.menu li {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  color: $menuTextColor;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0px;
+
+  &:hover {
     background: $mainColor;
-    color:$secondaryTextColor;
+    color: $secondaryTextColor;
   }
-  //menu css
-  .menu li {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    height: 90px;
+
+  span {
     display: flex;
+    justify-content: center;
     align-items: center;
-    color: $menuTextColor;
-    font-size: 20px;
-    font-weight: 600;
-    margin: 10px 0px; 
-    &:hover {
-      background: $mainColor;
-      color: $secondaryTextColor;
-    } 
-    span {
+    font-size: 28px;
+    padding: 24px;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .menu {
+    li {
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 28px;
-      padding: 24px;
     }
   }
-  
-  
-  //ASIDE CSS
+}
+
+//ASIDE CSS

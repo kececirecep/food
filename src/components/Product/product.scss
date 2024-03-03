@@ -48,4 +48,14 @@
             align-items: center;
         }
     }
+} 
+
+
+
+@media (max-width: 1000px) {
+    .productCard{
+        h2{
+            font-size: 14px; 
+        }
+    } 
 }

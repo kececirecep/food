@@ -7,11 +7,27 @@
 
     button {
         background-color: $mainColor;
-        color:white;
-        padding:5px 10px;
-        border:none;
+        color: white;
+        padding: 5px 10px;
+        border: none;
         border-radius: 10px;
         font-size: 18px;
         font-weight: 600;
     }
+}
+
+
+@media (max-width: 500px) {
+    .addProducts {
+        .formInput {
+            img {
+                width: 100% !important;
+            }
+        }
+
+        button {
+            width: 100% !important;
+        }
+    }
+
 }

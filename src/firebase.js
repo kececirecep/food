@@ -7,12 +7,12 @@ import { getStorage } from 'firebase/storage';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAdwrnaIoeMxwIP5xAjN1SERQM5qWmlE64",
-  authDomain: "food-ec015.firebaseapp.com",
-  projectId: "food-ec015",
-  storageBucket: "food-ec015.appspot.com",
-  messagingSenderId: "551960159658",
-  appId: "1:551960159658:web:3a92647e551468874fb7d3"
+  apiKey: "AIzaSyCd3oC1XYwGUk5F4wMrY7xk86xYeFKCXeQ",
+  authDomain: "food-v2-63dee.firebaseapp.com",
+  projectId: "food-v2-63dee",
+  storageBucket: "food-v2-63dee.appspot.com",
+  messagingSenderId: "866827840425",
+  appId: "1:866827840425:web:7956380ef1da60a26c32b8"
 };
 
 // Initialize Firebase

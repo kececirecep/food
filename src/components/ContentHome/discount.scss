@@ -1,28 +1,42 @@
 @import '../../style/variables/variables.scss';
 
-.discountHome{
-    height: 240px;
-    background: $mainColor;
+.discountHome {
+  height: 240px;
+  background: $mainColor;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  color: $secondaryTextColor;
+  border-radius: 18px;
+
+  .discountText {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    overflow: hidden;  
-    color: $secondaryTextColor;
-    border-radius: 18px;
-    .discountText{ 
-      display: flex; 
-      flex-direction: column;
-      justify-content: center;
-      padding-left: 40px;
-      h4{
-        font-size: 36px;
-        font-weight: bold;
-      }
-      span{
-  
-      }
+    padding-left: 40px;
+
+    h4 {
+      font-size: 36px;
+      font-weight: bold;
     }
-    img{ 
-      height: 240px;
-      object-fit: contain;
+
+    span {}
+  }
+
+  img {
+    height: 240px;
+    object-fit: contain;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .discountHome {
+    height: 120px;
+    .discountText {
+      h4 {
+        font-size: 24px !important;
+      }
     }
   }
+}
