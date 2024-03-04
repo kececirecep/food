@@ -44,7 +44,7 @@ const AddCategory = () => {
                 <Col xs={3} sm={2} md={3} lg={3} xl={3} xxl={2} className='m-0 p-0'>
                     <Aside />
                 </Col>
-                <Col xs={8} sm={10} md={9} lg={9} xl={9} xxl={10} className='m-0 p-0'>
+                <Col xs={9} sm={10} md={9} lg={9} xl={9} xxl={10} className='m-0 p-0'>
                     <Header />
                     <form onSubmit={handleAddCategory} className='addCategory'>
 

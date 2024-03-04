@@ -7,6 +7,9 @@
   border-right: 1px solid rgb(238, 238, 238);
   height: 100vh;
   transition: .4s;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
 // @media (max-width: 1000px) {
@@ -66,12 +69,21 @@
 
 
 @media (max-width: 1000px) {
+
+
   .menu {
     li {
       display: flex;
       justify-content: center;
       align-items: center;
     }
+  }
+}
+
+
+@media (max-width: 1600px) {
+  .aside {
+    overflow-y: scroll;
   }
 }
 

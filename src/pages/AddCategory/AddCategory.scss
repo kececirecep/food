@@ -55,17 +55,17 @@
         button {
             width: 100% !important;
         }
+    }
 
-        .previous {
-            span {
-                display: flex;
-                flex-direction: column;
-                font-size: 32px;
+    .previous {
+        span {
+            display: flex;
+            flex-direction: column;
+            font-size: 32px;
 
-                h2 {
-                    font-size: 20px;
-                    text-align: center;
-                }
+            h2 {
+                font-size: 20px;
+                text-align: center;
             }
         }
     }
